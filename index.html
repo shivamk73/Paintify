@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Name Plate Maker</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    h2 {
+      color: #333;
+    }
+    #myBox {
+      width: 280px;
+      height: 170px;
+      background-color: lightyellow;
+      color: black;
+      border: 2px solid black;
+      margin: 20px auto;
+      font-size: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      cursor: text; 
+      word-break: break-word;
+    }
+    .main-controls {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-top: 35px;
+    }
+    .circle {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      border: 1.5px solid black;
+      cursor: pointer;
+    }
+    .f-btn {
+      padding: 6px 12px;
+      cursor: pointer;
+      border: 1px solid black;
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Paintify</h2>
+  
+  
+  <div id="myBox" contenteditable="true">Welcome</div>
+
+  <div class="main-controls">
+    <div>
+      <h4>Box Color</h4>
+      <button class="circle" style="background-color: lightyellow;" onclick="changeBg('lightyellow')"></button>
+      <button class="circle" style="background-color: lightgreen;" onclick="changeBg('lightgreen')"></button>
+      <button class="circle" style="background-color: pink;" onclick="changeBg('pink')"></button>
+    </div>
+    <div>
+      <h4>Writing Color</h4>
+      <button class="circle" style="background-color: black;" onclick="changeText('black')"></button>
+      <button class="circle" style="background-color: purple;" onclick="changeText('purple')"></button>
+      <button class="circle" style="background-color: brown;" onclick="changeText('brown')"></button>
+    </div>
+    <div>
+      <h4>Text Style</h4>
+      <button class="f-btn" onclick="changeFont('Verdana')">Verdana</button>
+      <button class="f-btn" onclick="changeFont('Georgia')">Georgia</button>
+    </div>
+  </div>
+
+  <script>
+    var box = document.getElementById("myBox");
+
+    function changeBg(colorName) {
+      box.style.backgroundColor = colorName;
+    }
+
+    function changeText(textColor) {
+      box.style.color = textColor;
+    }
+
+    function changeFont(fontName) {
+      box.style.fontFamily = fontName;
+    }
+  </script>
+
+</body>
+</html>
